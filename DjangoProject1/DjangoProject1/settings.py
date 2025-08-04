@@ -80,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'tododb',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'USER': 'user',
+        'PASSWORD': 'passowrd',
         'HOST': 'localhost',
 
     }
@@ -132,3 +132,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
