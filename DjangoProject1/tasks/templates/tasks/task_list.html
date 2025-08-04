@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+{% block content %}
+  <h1 style="text-align: center;">Task List</h1>
+
+  {% for task in object_list %}
+    <div class="task-card">
+      <img src="{{ task.image.url }}" alt="{{ task.title }}">
+      <h3>{{ task.title }}</h3>
+      <p>Status: {{ task.status }}</p>
+      <a href="{% url 'task_detail' task.pk %}">View</a>
+    <a href="{% url 'task_delete' task.pk %}">Delete</a>
+    </div>
+  {% empty %}
+    <p>No tasks found.</p>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+  <h2>{{ object.title }}</h2>
+  <p><strong>Status:</strong> {{ object.status }}</p>
+  <p><strong>Description:</strong> {{ object.description }}</p>
+  <p><strong>Created At:</strong> {{ object.created_at }}</p>
+
+  <img src="{{ object.image.url }}" alt="{{ object.title }}" style="max-width: 100%; height: auto;">
+
+  <p>
+    <a href="{% url 'task_update' object.pk %}">Edit</a> |
+    <a href="{% url 'task_delete' object.pk %}">Delete</a>
+  </p>
+  <p><a href="{% url 'task_list' %}">Back to list</a></p>
+{% endblock %}

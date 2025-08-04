@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+  <h2>{% if object %}Edit Task{% else %}Create Task{% endif %}</h2>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    {% if form.non_field_errors %}
+      <div style="color: red;">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

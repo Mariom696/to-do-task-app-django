@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+</head>
+<body>
+    <nav>
+        <a href="{% url 'task_list' %}">Home</a>
+        <a href="{% url 'task_create' %}">Create Task</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
